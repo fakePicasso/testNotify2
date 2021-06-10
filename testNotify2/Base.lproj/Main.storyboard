@@ -124,9 +124,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YE8-Ln-vu3">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YE8-Ln-vu3">
                                 <rect key="frame" x="0.0" y="131" width="414" height="300"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="LQN-eb-Khp"/>
+                                </constraints>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -134,7 +137,10 @@
                             </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGm-7X-xVg">
                                 <rect key="frame" x="0.0" y="44" width="252" height="96"/>
-                                <state key="normal" title="Button"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="m1c-j5-nVP"/>
+                                </constraints>
+                                <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="btnLogOut:" destination="b6i-em-KyW" eventType="touchUpInside" id="2SU-hU-u8f"/>
                                 </connections>
@@ -143,7 +149,7 @@
                                 <rect key="frame" x="20" y="531" width="374" height="71"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="nPW-Pb-LkV"/>
+                                    <constraint firstAttribute="height" constant="71" id="W6L-XL-ZoG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -153,15 +159,15 @@
                         <viewLayoutGuide key="safeArea" id="hOA-BR-voD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hOA-BR-voD" firstAttribute="bottom" secondItem="aGm-7X-xVg" secondAttribute="bottom" constant="673" id="EwE-Id-akG"/>
-                            <constraint firstItem="aGm-7X-xVg" firstAttribute="leading" secondItem="YE8-Ln-vu3" secondAttribute="leading" id="Qbk-H7-wH4"/>
-                            <constraint firstItem="hdY-fu-qHJ" firstAttribute="trailing" secondItem="iT8-wU-v9Z" secondAttribute="trailingMargin" id="YXV-cK-seN"/>
-                            <constraint firstItem="aGm-7X-xVg" firstAttribute="top" secondItem="hOA-BR-voD" secondAttribute="top" id="Zmp-7p-eR1"/>
-                            <constraint firstItem="aGm-7X-xVg" firstAttribute="leading" secondItem="hOA-BR-voD" secondAttribute="leading" id="b8g-3D-OmF"/>
-                            <constraint firstItem="hdY-fu-qHJ" firstAttribute="centerX" secondItem="YE8-Ln-vu3" secondAttribute="centerX" id="fji-gi-Q5q"/>
-                            <constraint firstItem="hOA-BR-voD" firstAttribute="trailing" secondItem="aGm-7X-xVg" secondAttribute="trailing" constant="162" id="ldW-hu-btf"/>
-                            <constraint firstItem="hdY-fu-qHJ" firstAttribute="leading" secondItem="iT8-wU-v9Z" secondAttribute="leadingMargin" id="xEf-fs-jTb"/>
-                            <constraint firstItem="hOA-BR-voD" firstAttribute="bottom" secondItem="hdY-fu-qHJ" secondAttribute="bottom" constant="211" id="xkl-IZ-F8o"/>
+                            <constraint firstItem="hOA-BR-voD" firstAttribute="bottom" secondItem="hdY-fu-qHJ" secondAttribute="bottom" constant="211" id="5Cv-mH-GxY"/>
+                            <constraint firstItem="hOA-BR-voD" firstAttribute="trailing" secondItem="aGm-7X-xVg" secondAttribute="trailing" constant="162" id="G36-pC-lWI"/>
+                            <constraint firstItem="hdY-fu-qHJ" firstAttribute="trailing" secondItem="iT8-wU-v9Z" secondAttribute="trailingMargin" id="HtB-Yk-zIn"/>
+                            <constraint firstItem="aGm-7X-xVg" firstAttribute="leading" secondItem="YE8-Ln-vu3" secondAttribute="leading" id="PdP-8i-nPQ"/>
+                            <constraint firstItem="YE8-Ln-vu3" firstAttribute="top" secondItem="hOA-BR-voD" secondAttribute="top" constant="87" id="Pn0-st-ORi"/>
+                            <constraint firstItem="aGm-7X-xVg" firstAttribute="top" secondItem="hOA-BR-voD" secondAttribute="top" id="XnF-Mt-8H2"/>
+                            <constraint firstItem="aGm-7X-xVg" firstAttribute="leading" secondItem="hOA-BR-voD" secondAttribute="leading" id="iIi-pR-Xvp"/>
+                            <constraint firstItem="hdY-fu-qHJ" firstAttribute="leading" secondItem="iT8-wU-v9Z" secondAttribute="leadingMargin" id="rAY-Gg-0uy"/>
+                            <constraint firstItem="YE8-Ln-vu3" firstAttribute="centerX" secondItem="hdY-fu-qHJ" secondAttribute="centerX" id="s2d-Pi-A2c"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="P7v-6E-A1n"/>

@@ -75,7 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func testBtn(_ sender: Any, forEvent event: UIEvent) {
         
         let vc = storyboard?.instantiateViewController(identifier: "other") as! ViewController
-        vc.modalPresentationStyle = .fullScreen
+        //vc.modalPresentationStyle = .fullScreen
         
         present(vc, animated: true)
         completionHandler?(LoginEmail.text)
