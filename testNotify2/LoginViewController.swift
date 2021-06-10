@@ -80,6 +80,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         present(vc, animated: true)
         completionHandler?(LoginEmail.text)
         
+        
         //dismiss(animated: true, completion: nil)
     }
     
