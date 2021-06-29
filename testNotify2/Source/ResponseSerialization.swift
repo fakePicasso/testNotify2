@@ -239,7 +239,7 @@ extension DataRequest {
 
                 guard let serializerError = result.failure, let delegate = self.delegate else {
                     self.responseSerializerDidComplete { queue.async { completionHandler(response) } }
-                    return
+                    return 
                 }
 
                 delegate.retryResult(for: self, dueTo: serializerError) { retryResult in

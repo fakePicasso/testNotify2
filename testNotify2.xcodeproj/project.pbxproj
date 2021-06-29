@@ -49,6 +49,7 @@
 		804FD662266E953400AFF69F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FD661266E953400AFF69F /* SignUpViewController.swift */; };
 		804FD664266EB0CB00AFF69F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804FD663266EB0CB00AFF69F /* iOSDropDown.framework */; };
 		804FD666266EBD0A00AFF69F /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FD665266EBD0A00AFF69F /* ForgetViewController.swift */; };
+		8094C58C2682859D00618B93 /* Cookie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8094C58B2682859D00618B93 /* Cookie.swift */; };
 		8098A52326701ED1008E1685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8098A52126701ED1008E1685 /* ViewController.swift */; };
 		8098A52426701ED1008E1685 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8098A52226701ED1008E1685 /* ViewController.xib */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,7 @@
 		804FD661266E953400AFF69F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		804FD663266EB0CB00AFF69F /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		804FD665266EBD0A00AFF69F /* ForgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
+		8094C58B2682859D00618B93 /* Cookie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cookie.swift; sourceTree = "<group>"; };
 		8098A52126701ED1008E1685 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8098A52226701ED1008E1685 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		B34595283F7BD1121E11F560 /* Pods-testNotify2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testNotify2.debug.xcconfig"; path = "Target Support Files/Pods-testNotify2/Pods-testNotify2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				804FD60E266C6A9B00AFF69F /* Assets.xcassets */,
 				804FD610266C6A9B00AFF69F /* LaunchScreen.storyboard */,
 				804FD613266C6A9B00AFF69F /* Info.plist */,
+				8094C58B2682859D00618B93 /* Cookie.swift */,
 			);
 			path = testNotify2;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				804FD656266C6AC600AFF69F /* Request.swift in Sources */,
 				804FD65A266C6AC600AFF69F /* ResponseSerialization.swift in Sources */,
 				804FD658266C6AC600AFF69F /* HTTPHeaders.swift in Sources */,
+				8094C58C2682859D00618B93 /* Cookie.swift in Sources */,
 				804FD654266C6AC600AFF69F /* Alamofire.swift in Sources */,
 				804FD606266C6A9A00AFF69F /* AppDelegate.swift in Sources */,
 				804FD649266C6AC600AFF69F /* RedirectHandler.swift in Sources */,

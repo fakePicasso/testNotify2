@@ -27,6 +27,17 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func shakeAnimation() {
+            let animation = CABasicAnimation(keyPath: "position")
+            animation.duration = 0.2
+            animation.repeatCount = 2
+            animation.speed = 5
+            animation.autoreverses = true
+            animation.fromValue = NSValue(cgPoint: CGPoint(x: self.view.center.x - 10, y:  self.view.center.y))
+            animation.toValue = NSValue(cgPoint: CGPoint(x: self.view.center.x + 10, y:  self.view.center.y))
+            self.view.layer.add(animation, forKey: "position")
+        }
+    
     
     //@IBAction func btnLoginPressed(_ sender: Any) {
     @IBAction func btnSignUpPressed(_ sender: Any) {
@@ -50,6 +61,15 @@ class SignUpViewController: UIViewController {
                 }
                 
             }
+            
+            
+            if ((string.value?.isEmpty) != nil){
+                
+                self.shakeAnimation()
+                self.SignUpEmail.text = ""
+                self.SignUpPass.text = ""
+            }
+            
         }
         
     }
