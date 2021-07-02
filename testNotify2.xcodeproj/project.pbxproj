@@ -49,6 +49,8 @@
 		804FD662266E953400AFF69F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FD661266E953400AFF69F /* SignUpViewController.swift */; };
 		804FD664266EB0CB00AFF69F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804FD663266EB0CB00AFF69F /* iOSDropDown.framework */; };
 		804FD666266EBD0A00AFF69F /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FD665266EBD0A00AFF69F /* ForgetViewController.swift */; };
+		80659856268D1C2D00E3B786 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80659855268D1C2D00E3B786 /* NotificationsViewController.swift */; };
+		80659858268D345700E3B786 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80659857268D345700E3B786 /* MessagesViewController.swift */; };
 		8094C58C2682859D00618B93 /* Cookie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8094C58B2682859D00618B93 /* Cookie.swift */; };
 		8098A52326701ED1008E1685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8098A52126701ED1008E1685 /* ViewController.swift */; };
 		8098A52426701ED1008E1685 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8098A52226701ED1008E1685 /* ViewController.xib */; };
@@ -101,6 +103,8 @@
 		804FD661266E953400AFF69F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		804FD663266EB0CB00AFF69F /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		804FD665266EBD0A00AFF69F /* ForgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
+		80659855268D1C2D00E3B786 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		80659857268D345700E3B786 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		8094C58B2682859D00618B93 /* Cookie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cookie.swift; sourceTree = "<group>"; };
 		8098A52126701ED1008E1685 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8098A52226701ED1008E1685 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -146,8 +150,10 @@
 				804FD605266C6A9A00AFF69F /* AppDelegate.swift */,
 				804FD607266C6A9A00AFF69F /* SceneDelegate.swift */,
 				804FD60B266C6A9A00AFF69F /* Main.storyboard */,
+				80659857268D345700E3B786 /* MessagesViewController.swift */,
 				804FD665266EBD0A00AFF69F /* ForgetViewController.swift */,
 				8098A52126701ED1008E1685 /* ViewController.swift */,
+				80659855268D1C2D00E3B786 /* NotificationsViewController.swift */,
 				8098A52226701ED1008E1685 /* ViewController.xib */,
 				804FD65D266C6B9C00AFF69F /* LoginViewController.swift */,
 				804FD661266E953400AFF69F /* SignUpViewController.swift */,
@@ -348,7 +354,9 @@
 				804FD658266C6AC600AFF69F /* HTTPHeaders.swift in Sources */,
 				8094C58C2682859D00618B93 /* Cookie.swift in Sources */,
 				804FD654266C6AC600AFF69F /* Alamofire.swift in Sources */,
+				80659856268D1C2D00E3B786 /* NotificationsViewController.swift in Sources */,
 				804FD606266C6A9A00AFF69F /* AppDelegate.swift in Sources */,
+				80659858268D345700E3B786 /* MessagesViewController.swift in Sources */,
 				804FD649266C6AC600AFF69F /* RedirectHandler.swift in Sources */,
 				804FD63D266C6AC600AFF69F /* RequestInterceptor.swift in Sources */,
 				804FD64A266C6AC600AFF69F /* URLEncodedFormEncoder.swift in Sources */,
