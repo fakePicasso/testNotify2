@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		77C8F7578E3E2868CB8419EA /* Pods_testNotify2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6105F1F5B58C543E69A7B3 /* Pods_testNotify2.framework */; };
+		80364E2B26900F6D00C0FA02 /* APIUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80364E2A26900F6D00C0FA02 /* APIUIViewController.swift */; };
 		804FD606266C6A9A00AFF69F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FD605266C6A9A00AFF69F /* AppDelegate.swift */; };
 		804FD608266C6A9A00AFF69F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FD607266C6A9A00AFF69F /* SceneDelegate.swift */; };
 		804FD60D266C6A9A00AFF69F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 804FD60B266C6A9A00AFF69F /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		4B6105F1F5B58C543E69A7B3 /* Pods_testNotify2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testNotify2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80364E2A26900F6D00C0FA02 /* APIUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUIViewController.swift; sourceTree = "<group>"; };
 		804FD602266C6A9A00AFF69F /* testNotify2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testNotify2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		804FD605266C6A9A00AFF69F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		804FD607266C6A9A00AFF69F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				804FD605266C6A9A00AFF69F /* AppDelegate.swift */,
 				804FD607266C6A9A00AFF69F /* SceneDelegate.swift */,
 				804FD60B266C6A9A00AFF69F /* Main.storyboard */,
+				80364E2A26900F6D00C0FA02 /* APIUIViewController.swift */,
 				80659857268D345700E3B786 /* MessagesViewController.swift */,
 				804FD665266EBD0A00AFF69F /* ForgetViewController.swift */,
 				8098A52126701ED1008E1685 /* ViewController.swift */,
@@ -348,6 +351,7 @@
 				804FD645266C6AC600AFF69F /* RetryPolicy.swift in Sources */,
 				804FD655266C6AC600AFF69F /* Result+Alamofire.swift in Sources */,
 				804FD65C266C6AC600AFF69F /* SessionDelegate.swift in Sources */,
+				80364E2B26900F6D00C0FA02 /* APIUIViewController.swift in Sources */,
 				804FD644266C6AC600AFF69F /* DispatchQueue+Alamofire.swift in Sources */,
 				804FD656266C6AC600AFF69F /* Request.swift in Sources */,
 				804FD65A266C6AC600AFF69F /* ResponseSerialization.swift in Sources */,
