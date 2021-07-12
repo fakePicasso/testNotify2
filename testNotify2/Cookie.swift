@@ -16,6 +16,7 @@ var loginPassGlobal: String?
 var tokenExpireGlobal: Int?
 var expiration: Date?
 var photoURLGlobal: URL?
+var schoolGlobal: String?
 
 var currentDateAndTime = Date()
 var dateComponents = DateComponents()

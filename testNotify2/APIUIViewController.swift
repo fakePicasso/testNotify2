@@ -17,6 +17,8 @@ class APIUIViewController: UIViewController {
     
     var LogoURL: String?
     
+    var school: String?
+    
     // MARK: - dataPull
     struct dataPull: Codable {
         let response: Response
@@ -51,7 +53,10 @@ class APIUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPhotos()
+        getUser()
         emailLabel.text = loginEmailGlobal
+    
+
 
     }
     
@@ -79,9 +84,7 @@ class APIUIViewController: UIViewController {
                     print(self?.LogoURL ?? "")
                     self?.LogoURL = self?.LogoURL?.replacingOccurrences(of: "//", with: "https://")
                     let imageurl = URL(string: self?.LogoURL ?? "")!
-                    
-        
-                    
+
                         // Fetch Image Data
                         if let data = try? Data(contentsOf: imageurl) {
                             // Create Image and Update Image View
@@ -95,6 +98,30 @@ class APIUIViewController: UIViewController {
 
         }
         task.resume()
+    }
+    
+    func getUser() {
+        let Btoken = "99479211236bf2cb4823f1330ce8fa7a"
+        let authValue: String? = "Bearer \(Btoken)"
+        let urlAPI = "https://schoolnotifier.bubbleapps.io/version-test/api/1.1/wf/current_user"
+        
+        let headers : HTTPHeaders  = ["Authorization": authValue ?? ""]
+        let parameters = ["email": "a@a.com"]
+        
+        AF.request(urlAPI, method: .post, parameters: parameters, encoder: URLEncodedFormParameterEncoder.default, headers: headers, interceptor: nil).responseString { [self] (string2) in
+            print(string2)
+            self.school = string2.result.success
+            print(string2.result.success)
+            print(school!)
+            schoolGlobal = self.school
+            print(schoolGlobal)
+            schoolLabel.text = school
+            
+            
+            
+            
+        }
+        
     }
 
 
