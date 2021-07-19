@@ -16,7 +16,9 @@ var loginPassGlobal: String?
 var tokenExpireGlobal: Int?
 var expiration: Date?
 var photoURLGlobal: URL?
-var schoolGlobal: String?
+var schoolGlobal: String!
+var globalID: String?
+var returnSchool:String?
 
 var currentDateAndTime = Date()
 var dateComponents = DateComponents()
@@ -42,6 +44,7 @@ extension UIViewController {
         let response: result
         let status: String
     }
+    
 
     struct result: Codable {
         let token: String
