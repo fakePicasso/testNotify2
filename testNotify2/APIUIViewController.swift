@@ -9,6 +9,23 @@ import UIKit
 import Foundation
 
 
+//      TUTORING HELP
+//    func getUser(completionHandler: @escaping (schoolName?) -> (Void)) {
+//      Af.request { string2
+//        completionHandler(string2)
+//      }
+//    }
+//
+//    getUser() { [weak self] schoolName in
+//       guard let self = self else {return}
+//       DispatchQueue.main.async {
+//         label.text = schoolName
+//       }
+//       findRepositories()
+//    }
+
+
+
 class APIUIViewController: UIViewController {
     var schoolHelper: String?
 
@@ -78,10 +95,23 @@ class APIUIViewController: UIViewController {
         super.viewDidLoad()
         
         fetchPhotos()
-        getUser()
-        print(school as Any)
+        
+        
+        getUser() { [weak self] school in
+               guard let self = self else {return}
+               DispatchQueue.main.async {
+                self.schoolLabel.text = school
+                schoolGlobal = self.schoolLabel.text
+                self.findRepositories()
+               }
+
+            }
+//        getUser()
+        
+        //DEFINE CLOSURE HERE
+//        print(school as Any)
         findRepositories()
-        getUserData()
+        //getUserData()
         emailLabel.text = loginEmailGlobal
         
 //        if (schoolLabel.text != nil) {
@@ -131,29 +161,52 @@ class APIUIViewController: UIViewController {
         }
         task.resume()
     }
+  //MY VERSION 1.0
+//    func getUser(){
+//
+//        //var returnSchool: String?
+//        let Btoken = "99479211236bf2cb4823f1330ce8fa7a"
+//        let authValue: String? = "Bearer \(Btoken)"
+//        let urlAPI = "https://schoolnotifier.bubbleapps.io/version-test/api/1.1/wf/current_user"
+//
+//        let headers : HTTPHeaders  = ["Authorization": authValue ?? ""]
+//        let parameters = ["email": loginEmailGlobal]
+//
+//        AF.request(urlAPI, method: .post, parameters: parameters, encoder: URLEncodedFormParameterEncoder.default, headers: headers, interceptor: nil).responseString { [self] (string2) in
+//            print(string2)
+//            self.school = string2.result.success
+//            schoolLabel.text = school
+//            schoolGlobal = school
+//            print(schoolGlobal as Any)
+////            findRepositories()
+//            schoolURL = school
+//            schoolHelper = schoolLabel.text
+//
+//        }
+//    }
     
-    func getUser(){
-        
-        //var returnSchool: String?
+//    TUTORING VERSION 2.0
+//    var school = "Argonaut"
+    func getUser(completionHandler: @escaping (String) -> (Void)) {
         let Btoken = "99479211236bf2cb4823f1330ce8fa7a"
         let authValue: String? = "Bearer \(Btoken)"
         let urlAPI = "https://schoolnotifier.bubbleapps.io/version-test/api/1.1/wf/current_user"
-        
+
         let headers : HTTPHeaders  = ["Authorization": authValue ?? ""]
         let parameters = ["email": loginEmailGlobal]
+        AF.request(urlAPI, method: .post, parameters: parameters, encoder: URLEncodedFormParameterEncoder.default, headers: headers, interceptor: nil).responseString { [weak self] string2 in
+            self?.school = string2.result.success
+            schoolGlobal = self?.school
+            completionHandler(self?.school ?? "")
+
+            }
         
-        AF.request(urlAPI, method: .post, parameters: parameters, encoder: URLEncodedFormParameterEncoder.default, headers: headers, interceptor: nil).responseString { [self] (string2) in
-            print(string2)
-            self.school = string2.result.success
-            schoolLabel.text = school
-            schoolGlobal = school
-            print(schoolGlobal as Any)
-//            findRepositories()
-            schoolURL = school
-            schoolHelper = schoolLabel.text
 
         }
-    }
+
+    
+    
+    
 
     
     func findRepositories() {
@@ -164,8 +217,10 @@ class APIUIViewController: UIViewController {
 //        }
         
         
-//        dictionary2.updateValue(["key":"Name", "constraint_type": "text contains", "value": schoolLabel.text], forKey: "constraints")
-//        print(dictionary2)
+        if (schoolGlobal != nil) {
+            dictionary2.updateValue(["key":"Name", "constraint_type": "text contains", "value": schoolGlobal!], forKey: "constraints")
+        }
+        print(schoolGlobal as Any)
         
         components.scheme = "https"
         components.host = "schoolnotifier.bubbleapps.io"
@@ -195,6 +250,7 @@ class APIUIViewController: UIViewController {
             }
         }
         urlHelper(url2: LogoURL2!)
+        getUserData()
 
     }
 
@@ -242,14 +298,14 @@ class APIUIViewController: UIViewController {
     
     func getUserData(){
         
-
+        print("Here is what getUserData URL looks like: ", LogoURL3)
         let task2 = URLSession.shared.dataTask(with: LogoURL3!) { [weak self] data,_, error in
             guard let data = data, error == nil else {
                 return
             }
             print("Got data from getUserData()")
             print(data.count)
-            print(self?.LogoURL3)
+            print(self?.LogoURL3 ?? "")
             
             do{
                 let jsonResult = try JSONDecoder().decode(dataPull.self, from: data)
@@ -258,7 +314,7 @@ class APIUIViewController: UIViewController {
 //                    self?.results = jsonResult.results
 //                    self?.collectionView?.reloadData()
                     self?.LogoURL = jsonResult.response.results[0].logo
-                    
+
                     print(self?.LogoURL ?? "")
                     self?.LogoURL = self?.LogoURL?.replacingOccurrences(of: "//", with: "https://")
                     let imageurl = URL(string: self?.LogoURL ?? "")!
