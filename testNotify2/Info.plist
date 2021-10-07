@@ -17,9 +17,20 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>Root</key>
+	<dict>
+		<key>BUNDLE_ID</key>
+		<string>fakePicasso.testNotify2</string>
+		<key>CLIENT_ID</key>
+		<string>500778564016-ltrs1hscb5nk6oqgl2bjcsml2gvgm6br.apps.googleusercontent.com</string>
+		<key>PLIST_VERSION</key>
+		<string>1</string>
+		<key>REVERSED_CLIENT_ID</key>
+		<string>com.googleusercontent.apps.500778564016-ltrs1hscb5nk6oqgl2bjcsml2gvgm6br</string>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -55,17 +66,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>Root</key>
-	<dict>
-		<key>BUNDLE_ID</key>
-		<string>fakePicasso.testNotify2</string>
-		<key>PLIST_VERSION</key>
-		<string>1</string>
-		<key>REVERSED_CLIENT_ID</key>
-		<string>com.googleusercontent.apps.500778564016-ltrs1hscb5nk6oqgl2bjcsml2gvgm6br</string>
-		<key>CLIENT_ID</key>
-		<string>500778564016-ltrs1hscb5nk6oqgl2bjcsml2gvgm6br.apps.googleusercontent.com</string>
-	</dict>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
