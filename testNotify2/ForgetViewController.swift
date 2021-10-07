@@ -30,6 +30,8 @@ class ForgetViewController: UIViewController {
             
     }
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
