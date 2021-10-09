@@ -121,6 +121,7 @@
                             <constraint firstItem="KJT-zm-PEW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xja-hv-kCb"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="LOGIN" prompt="LOGIN" id="QJv-fx-wOO"/>
                     <connections>
                         <outlet property="LoginEmail" destination="KJT-zm-PEW" id="w9Y-Vj-qO5"/>
@@ -224,17 +225,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="school" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3V-8d-QZO">
-                                <rect key="frame" x="104" y="513" width="205" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="c1e-gb-4YW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOX-z9-NVj">
-                                <rect key="frame" x="76" y="398" width="239" height="54"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOX-z9-NVj">
+                                <rect key="frame" x="70" y="221" width="239" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="NM3-CB-8AP"/>
                                 </constraints>
@@ -248,12 +240,21 @@
                                     <constraint firstAttribute="height" constant="169" id="V6W-Ec-cvk"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPA-S8-Fpf">
-                                <rect key="frame" x="77" y="733" width="59" height="47"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPA-S8-Fpf">
+                                <rect key="frame" x="77" y="600" width="232" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="9IC-Nr-1PY"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="school" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3V-8d-QZO">
+                                <rect key="frame" x="87" y="283" width="205" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="c1e-gb-4YW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4hI-72-8NH"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -581,7 +582,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="b51-Vd-4JV"/>
+        <segue reference="sw9-sK-1oL"/>
         <segue reference="I0B-X1-Yy4"/>
     </inferredMetricsTieBreakers>
     <resources>

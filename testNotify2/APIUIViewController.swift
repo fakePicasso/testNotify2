@@ -40,10 +40,14 @@ class APIUIViewController: UIViewController {
     var LogoURL: String?
     var LogoURL2: URL?
     var LogoURL3: URL?
-
-    
     var school: String?
     var schoolURL: String?
+    var role: String?
+    var email: String?
+    var date_Started: String?
+    var school_Logo: String?
+
+    
 
     
     var dictionary2: [AnyHashable: Any] = [
@@ -89,7 +93,32 @@ class APIUIViewController: UIViewController {
         }
     }
     
+    // MARK: - Welcome
+    struct CurrentUser: Codable {
+        let status: String
+        let response: ResponseUser
+    }
 
+    // MARK: - Response
+    struct ResponseUser: Codable {
+        let email, schoolName, schoolLogo, role: String
+        let dateCreated: String
+
+        enum CodingKeys: String, CodingKey {
+            case email
+            case schoolName = "school_name"
+            case schoolLogo = "school_logo"
+            case role
+            case dateCreated = "date_created"
+        }
+    }
+    
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -187,28 +216,77 @@ class APIUIViewController: UIViewController {
     
 //    TUTORING VERSION 2.0
 //    var school = "Argonaut"
+//    func getUser(completionHandler: @escaping (String) -> (Void)) {
+//        let Btoken = "99479211236bf2cb4823f1330ce8fa7a"
+//        let authValue: String? = "Bearer \(Btoken)"
+//        let urlAPI = "https://schoolnotifier.bubbleapps.io/version-test/api/1.1/wf/current_user"
+//
+//        let headers : HTTPHeaders  = ["Authorization": authValue ?? ""]
+//        let parameters = ["email": loginEmailGlobal]
+//        AF.request(urlAPI, method: .post, parameters: parameters, encoder: URLEncodedFormParameterEncoder.default, headers: headers, interceptor: nil).responseString { [weak self] string2 in
+//            self?.school = string2.result.success
+//            schoolGlobal = self?.school
+//            completionHandler(self?.school ?? "")
+//            }
+//        }
+
     func getUser(completionHandler: @escaping (String) -> (Void)) {
-        let Btoken = "99479211236bf2cb4823f1330ce8fa7a"
-        let authValue: String? = "Bearer \(Btoken)"
-        let urlAPI = "https://schoolnotifier.bubbleapps.io/version-test/api/1.1/wf/current_user"
-
-        let headers : HTTPHeaders  = ["Authorization": authValue ?? ""]
-        let parameters = ["email": loginEmailGlobal]
-        AF.request(urlAPI, method: .post, parameters: parameters, encoder: URLEncodedFormParameterEncoder.default, headers: headers, interceptor: nil).responseString { [weak self] string2 in
-            self?.school = string2.result.success
-            schoolGlobal = self?.school
-            completionHandler(self?.school ?? "")
-
-            }
         
+            let token = "99479211236bf2cb4823f1330ce8fa7a"
+    //
+            let authValue: String? = "Bearer \(token)"
 
-        }
+            let getUserURL = "https://schoolnotifier.bubbleapps.io/version-test/api/1.1/wf/current_user3"
+            let parameters = ["email": loginEmailGlobal]
+//              TEMPORARY QUICK LOGIN
+//                let parameters = ["email": "jj@jj.com" , "pass" : "jj"]
+            let headers : HTTPHeaders  = ["Authorization": authValue ?? ""]
+            
+            AF.request(getUserURL,
+                       method: .post,
+                       parameters: parameters,
+                       encoder: URLEncodedFormParameterEncoder.default,
+                       headers: headers,
+                       interceptor: nil).responseJSON{  [weak self] response in
+                
+                print("***************",response.result)
 
-    
-    
-    
+//                switch response.result {
+                switch response.result {
+                                case .success:
+                                    if let data = response.data {
+                                        print(data)
+                                        // Convert This in JSON
+                                        do {
+                                            let responseDecoded = try JSONDecoder().decode(CurrentUser.self, from: data)
+                                            print("%%%%%%%%%%%%%%%%%%%%")
+                                            completionHandler(responseDecoded.response.schoolName)
+                                            self?.school_Logo = responseDecoded.response.schoolLogo
+                                            self?.email = responseDecoded.response.email
+                                            self?.role = responseDecoded.response.role
+                                            self?.date_Started = responseDecoded.response.dateCreated
+                                            
+                                            
+                                            
+                                        }catch let error as NSError{
+                                            print(error)
+                                        }
+                                    }
+                                case .failure(let error):
+                                    print("Error:", error)
+                                }
+                        
+    //                    if string.value?.contains("success") ?? false
+                        if ((self?.email) != nil){
+                            print("WORKS!!!!!!!!!!!!!!!!!")
+                            print(self?.school_Logo,self?.email,self?.role)
+                        }
+                        
+           
+            }
+       }
 
-    
+
     func findRepositories() {
         var components = URLComponents()
         

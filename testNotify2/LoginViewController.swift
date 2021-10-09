@@ -24,8 +24,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         LoginEmail.tag = 1
         LoginPass.tag = 2
         
-
+        self.hideKeyboardWhenTappedAround() 
         // Do any additional setup after loading the view.
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     func shakeAnimation() {
@@ -58,6 +62,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
                 let loginUrl = "https://schoolnotifier.bubbleapps.io/version-test/api/1.1/wf/login_copy2"
                 let parameters = ["email": LoginEmail.text ?? "" , "pass" : LoginPass.text ?? ""]
+//              TEMPORARY QUICK LOGIN
+//                let parameters = ["email": "jj@jj.com" , "pass" : "jj"]
                 let headers : HTTPHeaders  = ["Authorization": authValue ?? ""]
                 
                 AF.request(loginUrl,
@@ -83,6 +89,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                                 dateComponents.year = 1
                                                 dateComponents.day = -1
                                                 loginTokenGlobal = self?.loginToken
+                                                loginEmailGlobal = self?.LoginEmail.text
                                                 expiration = Calendar.current.date(byAdding: dateComponents, to: currentDateAndTime)
                                                 
 
@@ -98,7 +105,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             if ((self?.loginToken) != nil){
                                 DispatchQueue.main.async {
                                     UserDefaults.standard.set(true, forKey: "didLogin")
-                     
+                                   
                                     let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                                     let tabbarVC = storyboard.instantiateViewController(withIdentifier: "TabbarVC") as! UITabBarController
                                     guard let vc = tabbarVC.viewControllers![0] as? ViewController else {return}
